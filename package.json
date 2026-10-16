@@ -9,8 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "check": "concurrently --names \"lint,typecheck,format\" --prefix-colors \"yellow,blue,green\" \"pnpm run lint\" \"tsc --noEmit\" \"pnpm run format:check\"",
-    "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx,css}\" --cache",
-    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx,css}\" --cache"
+    "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx,css,yml}\" --cache",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx,css,yml}\" --cache"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
