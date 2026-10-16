@@ -39,7 +39,7 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 h-16 text-gray-400 bg-gray-900 body-font transition-transform duration-300 ease-in-out",
+        "sticky inset-x-0 top-0 z-50 text-gray-400 bg-gray-900/90 backdrop-blur-lg body-font transition-transform duration-300 ease-in-out",
         visible ? "translate-y-0" : "-translate-y-full",
       )}
     >
