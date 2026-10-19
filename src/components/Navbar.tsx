@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { cn } from "../lib/utils";
+import ArrowSvg from "../assets/ArrowSvg";
+import Button from "./ui/Button";
 
 const links = [
   { label: "Projects", slug: "#projects" },
@@ -39,13 +41,13 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "sticky inset-x-0 top-0 z-50 text-gray-400 bg-gray-900/90 backdrop-blur-lg body-font transition-transform duration-300 ease-in-out",
+        "sticky inset-x-0 top-0 z-50 text-card-foreground bg-card/90 backdrop-blur-lg body-font transition-transform duration-300 ease-in-out",
         visible ? "translate-y-0" : "-translate-y-full",
       )}
     >
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <a
-          className="flex title-font font-medium items-center text-white mb-4 md:mb-0"
+          className="flex title-font font-medium items-center text-pink-50 mb-4 md:mb-0"
           href="/"
         >
           <svg
@@ -56,8 +58,9 @@ export default function Navbar() {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
+              className="fill-pink-500"
               d="M0 0H15.6V19.2H21.6V0H24V24H13.2V4.8H2.4V19.2H10.8V24H0V0Z"
-              fill="white"
+              // fill="white"
             />
           </svg>
           <span className="ml-3 text-xl">ConUtil</span>
@@ -67,26 +70,14 @@ export default function Navbar() {
             <a
               key={link.slug}
               href={link.slug}
-              className="mr-5 hover:text-white"
+              className="mr-5 hover:text-white transition-all"
             >
               {link.label}
             </a>
           ))}
         </nav>
         <a href="https://github.com/xahmedalam" target="_blank">
-          <button className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0 cursor-pointer">
-            GitHub
-            <svg
-              className="w-4 h-4 ml-1 fill-gray-400"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="#ffffff"
-              viewBox="0 0 256 256"
-            >
-              <path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path>
-            </svg>
-          </button>
+          <Button/>
         </a>
       </div>
     </header>

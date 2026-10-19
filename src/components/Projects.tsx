@@ -1,9 +1,9 @@
 export default function Projects() {
   return (
-    <section id="projects" className="text-gray-400 bg-gray-900 body-font">
+    <section id="projects" className="body-font">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
-          <h2 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">
+          <h2 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-pink-50">
             My Projects
           </h2>
         </div>

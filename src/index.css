@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: #221d27;
+  --color-foreground: #f9f8fb;
+  --color-body: #aaa0b5;
+  --color-primary: #640733;
+  --color-primary-foreground: #f0c0d9;
+  --color-card: #191218;
+  --color-card-foreground: #e3bad1;
+  --color-border: #302836;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -13,7 +24,8 @@ body {
 }
 
 @layer base {
-  body {
-    @apply bg-gray-900;
+  body,
+  section {
+    @apply bg-background text-foreground;
   }
 }

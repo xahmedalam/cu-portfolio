@@ -8,13 +8,13 @@ export default function App() {
   return (
     <main>
       <Hero />
-      <hr className="container text-gray-600 mx-auto" />
+      <hr className="container text-border mx-auto" />
       <Projects />
-      <hr className="container text-gray-600 mx-auto" />
+      <hr className="container text-border mx-auto" />
       <About />
-      <hr className="container text-gray-600 mx-auto" />
+      <hr className="container text-border mx-auto" />
       <Contact />
-      <hr className="container text-gray-600 mx-auto" />
+      <hr className="container text-border mx-auto" />
       <Footer />
     </main>
   );
