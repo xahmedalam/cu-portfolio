@@ -1,3 +1,8 @@
+const links = [
+  "https://github.com/xahmedalam/genzplayer",
+  "https://github.com/xahmedalam/conutil-compressor",
+];
+
 export default function Hero() {
   return (
     <section className="body-font">
@@ -8,55 +13,91 @@ export default function Hero() {
           </h1>
           <p className="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base text-body">
             {
-              "2 projects shiped, Really first I solved my own problem! Every image you see on this page is compressed with my own little tool \"ConUtil Compressor\"."
+              '2 projects shiped, Really first I solved my own problem! Every image you see on this page is compressed with my own little tool "ConUtil Compressor".'
             }
           </p>
         </div>
         <div className="flex flex-wrap md:-m-2 -m-1 [&_img]:rounded-lg">
           <div className="flex flex-wrap w-1/2">
             <div className="md:p-2 p-1 w-1/2">
-              <img
-                alt="gallery"
-                className="w-full object-cover h-full object-center block"
-                src="p1-2.png"
-              />
+              <a
+                href={links[0]}
+                target="_blank"
+                className="transition-opacity hover:opacity-75"
+              >
+                <img
+                  alt="gallery"
+                  className="w-full object-cover h-full object-center block"
+                  src="p1-2.png"
+                />
+              </a>
             </div>
             <div className="md:p-2 p-1 w-1/2">
-              <img
-                alt="gallery"
-                className="w-full object-cover h-full object-center block"
-                src="p1-3.png"
-              />
+              <a
+                href={links[0]}
+                target="_blank"
+                className="transition-opacity hover:opacity-75"
+              >
+                <img
+                  alt="gallery"
+                  className="w-full object-cover h-full object-center block"
+                  src="p1-3.png"
+                />
+              </a>
             </div>
             <div className="md:p-2 p-1 w-full">
-              <img
-                alt="gallery"
-                className="w-full h-full object-cover object-center block"
-                src="p1-1.png"
-              />
+              <a
+                href={links[0]}
+                target="_blank"
+                className="transition-opacity hover:opacity-75"
+              >
+                <img
+                  alt="gallery"
+                  className="w-full h-full object-cover object-center block"
+                  src="p1-1.png"
+                />
+              </a>
             </div>
           </div>
           <div className="flex flex-wrap w-1/2">
             <div className="md:p-2 p-1 w-full">
-              <img
-                alt="gallery"
-                className="w-full h-full object-cover object-center block"
-                src="p2-1.png"
-              />
+              <a
+                href={links[1]}
+                target="_blank"
+                className="transition-opacity hover:opacity-75"
+              >
+                <img
+                  alt="gallery"
+                  className="w-full h-full object-cover object-center block"
+                  src="p2-1.png"
+                />
+              </a>
             </div>
             <div className="md:p-2 p-1 w-1/2">
-              <img
-                alt="gallery"
-                className="w-full object-cover h-full object-center block"
-                src="p2-2.png"
-              />
+              <a
+                href={links[1]}
+                target="_blank"
+                className="transition-opacity hover:opacity-75"
+              >
+                <img
+                  alt="gallery"
+                  className="w-full object-cover h-full object-center block"
+                  src="p2-2.png"
+                />
+              </a>
             </div>
             <div className="md:p-2 p-1 w-1/2">
-              <img
-                alt="gallery"
-                className="w-full object-cover h-full object-center block"
-                src="p2-3.png"
-              />
+              <a
+                href={links[1]}
+                target="_blank"
+                className="transition-opacity hover:opacity-75"
+              >
+                <img
+                  alt="gallery"
+                  className="w-full object-cover h-full object-center block"
+                  src="p2-3.png"
+                />
+              </a>
             </div>
           </div>
         </div>
