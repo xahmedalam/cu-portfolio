@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { cn } from "../lib/utils";
-import ArrowSvg from "../assets/ArrowSvg";
 import Button from "./ui/Button";
 
 const links = [
@@ -77,7 +76,7 @@ export default function Navbar() {
           ))}
         </nav>
         <a href="https://github.com/xahmedalam" target="_blank">
-          <Button/>
+          <Button />
         </a>
       </div>
     </header>
