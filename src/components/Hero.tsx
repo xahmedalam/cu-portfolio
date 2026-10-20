@@ -1,3 +1,5 @@
+import ArrowSvg from "../assets/ArrowSvg";
+
 const links = [
   "https://github.com/xahmedalam/genzplayer",
   "https://github.com/xahmedalam/conutil-compressor",
@@ -23,8 +25,9 @@ export default function Hero() {
               <a
                 href={links[0]}
                 target="_blank"
-                className="transition-opacity hover:opacity-75"
+                className="transition-opacity hover:opacity-75 relative"
               >
+                <ArrowSvg className="absolute top-0.5 right-0.5 size-3 lg:top-1 lg:right-1 lg:size-4 text-pink-50 -rotate-45" />
                 <img
                   alt="gallery"
                   className="w-full object-cover h-full object-center block"
@@ -36,8 +39,9 @@ export default function Hero() {
               <a
                 href={links[0]}
                 target="_blank"
-                className="transition-opacity hover:opacity-75"
+                className="transition-opacity hover:opacity-75 relative"
               >
+                <ArrowSvg className="absolute top-0.5 right-0.5 size-3 lg:top-1 lg:right-1 lg:size-4 text-pink-50 -rotate-45" />
                 <img
                   alt="gallery"
                   className="w-full object-cover h-full object-center block"
@@ -49,8 +53,9 @@ export default function Hero() {
               <a
                 href={links[0]}
                 target="_blank"
-                className="transition-opacity hover:opacity-75"
+                className="transition-opacity hover:opacity-75 relative"
               >
+                <ArrowSvg className="absolute top-0.5 right-0.5 size-3 lg:top-1 lg:right-1 lg:size-4 text-pink-50 -rotate-45" />
                 <img
                   alt="gallery"
                   className="w-full h-full object-cover object-center block"
@@ -64,8 +69,9 @@ export default function Hero() {
               <a
                 href={links[1]}
                 target="_blank"
-                className="transition-opacity hover:opacity-75"
+                className="transition-opacity hover:opacity-75 relative"
               >
+                <ArrowSvg className="absolute top-0.5 right-0.5 size-3 lg:top-1 lg:right-1 lg:size-4 text-pink-50 -rotate-45" />
                 <img
                   alt="gallery"
                   className="w-full h-full object-cover object-center block"
@@ -77,8 +83,9 @@ export default function Hero() {
               <a
                 href={links[1]}
                 target="_blank"
-                className="transition-opacity hover:opacity-75"
+                className="transition-opacity hover:opacity-75 relative"
               >
+                <ArrowSvg className="absolute top-0.5 right-0.5 size-3 lg:top-1 lg:right-1 lg:size-4 text-pink-50 -rotate-45" />
                 <img
                   alt="gallery"
                   className="w-full object-cover h-full object-center block"
@@ -90,8 +97,9 @@ export default function Hero() {
               <a
                 href={links[1]}
                 target="_blank"
-                className="transition-opacity hover:opacity-75"
+                className="transition-opacity hover:opacity-75 relative"
               >
+                <ArrowSvg className="absolute top-0.5 right-0.5 size-3 lg:top-1 lg:right-1 lg:size-4 text-pink-50 -rotate-45" />
                 <img
                   alt="gallery"
                   className="w-full object-cover h-full object-center block"
