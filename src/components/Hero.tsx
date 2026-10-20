@@ -2,7 +2,7 @@ import ArrowSvg from "../assets/ArrowSvg";
 
 const links = [
   "https://github.com/xahmedalam/genzplayer",
-  "https://github.com/xahmedalam/conutil-compressor",
+  "https://compressor.conutil.com",
 ];
 
 export default function Hero() {
