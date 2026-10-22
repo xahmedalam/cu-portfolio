@@ -1,59 +1,65 @@
+import GithubSvg from "../assets/GithubSvg";
+
+const links = {
+  github: "https://github.com/xahmedalam",
+  twitter: "https://twitter.com/xahmedalam",
+  instagram: "https://www.instagram.com/xahmedalam/",
+  linkedin: "https://www.linkedin.com/in/xahmedalam/",
+};
+
 export default function Footer() {
   return (
     <footer className="body-font">
       <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-        <a className="flex title-font font-medium items-center md:justify-start justify-center text-white">
+        <a className="flex title-font font-medium items-center md:justify-start justify-center text-pink-50">
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            <path
+              className="fill-pink-500"
+              d="M0 0H15.6V19.2H21.6V0H24V24H13.2V4.8H2.4V19.2H10.8V24H0V0Z"
+            />
           </svg>
-          <span className="ml-3 text-xl">Tailblocks</span>
+          <span className="ml-3 text-xl">ConUtil</span>
         </a>
-        <p className="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">
-          © 2020 Tailblocks —
+        <p className="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-border sm:py-2 sm:mt-0 mt-4">
+          © {new Date().getFullYear()} ConUtil —
           <a
-            href="https://twitter.com/knyttneve"
-            className="text-gray-500 ml-1"
+            href={links.twitter}
+            className="text-gray-400 ml-1"
             target="_blank"
-            rel="noopener noreferrer"
           >
-            @knyttneve
+            @xahmedalam
           </a>
         </p>
         <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-          <a className="text-gray-400">
+          <a href={links.github} target="_blank" className="text-gray-400">
+            <GithubSvg className="size-5" />
+          </a>
+          <a
+            href={links.twitter}
+            target="_blank"
+            className="ml-3 text-gray-400"
+          >
             <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
               fill="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
+              viewBox="0 0 256 256"
             >
-              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path>
             </svg>
           </a>
-          <a className="ml-3 text-gray-400">
-            <svg
-              fill="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
-              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-            </svg>
-          </a>
-          <a className="ml-3 text-gray-400">
+          <a
+            href={links.instagram}
+            target="_blank"
+            className="ml-3 text-gray-400"
+          >
             <svg
               fill="none"
               stroke="currentColor"
@@ -67,7 +73,11 @@ export default function Footer() {
               <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
             </svg>
           </a>
-          <a className="ml-3 text-gray-400">
+          <a
+            href={links.linkedin}
+            target="_blank"
+            className="ml-3 text-gray-400"
+          >
             <svg
               fill="currentColor"
               stroke="currentColor"
