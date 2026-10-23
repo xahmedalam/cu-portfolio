@@ -1,3 +1,23 @@
+import { Cloudflare } from "../assets/logos/cloudflare";
+import { Codex } from "../assets/logos/codex";
+import { CSS } from "../assets/logos/css";
+import { Docker } from "../assets/logos/docker";
+import { Expressjs } from "../assets/logos/expressjs";
+import { FastAPI } from "../assets/logos/fastapi";
+import { Flask } from "../assets/logos/flask";
+import { Git } from "../assets/logos/git";
+import { GitHub } from "../assets/logos/github";
+import { GitHubCopilot } from "../assets/logos/github-copilot";
+import { HTML5 } from "../assets/logos/html";
+import { JavaScript } from "../assets/logos/javascript";
+import { Linux } from "../assets/logos/linux";
+import { Nextjs } from "../assets/logos/nextjs";
+import { OpenAI } from "../assets/logos/openai";
+import { Python } from "../assets/logos/python";
+import { ReactSvg } from "../assets/logos/reactjs";
+import { TailwindCSS } from "../assets/logos/tailwindcss";
+import { TypeScript } from "../assets/logos/typescript";
+
 export default function About() {
   return (
     <section id="about" className="body-font">
@@ -25,37 +45,41 @@ export default function About() {
                 </h2>
                 <div className="w-12 h-1 bg-pink-500 rounded mt-2 mb-4"></div>
                 <p className="text-base text-gray-400">
-                  Raclette knausgaard hella meggs normcore williamsburg enamel
-                  pin sartorial venmo tbh hot chicken gentrify portland.
+                  I'm the nerd person who really love coding, because with
+                  coding I can talk to my computer like a friend. sometimes :)
                 </p>
               </div>
             </div>
             <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-800 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
-              <p className="leading-relaxed text-lg mb-4">
-                Meggings portland fingerstache lyft, post-ironic fixie man bun
-                banh mi umami everyday carry hexagon locavore direct trade art
-                party. Locavore small batch listicle gastropub farm-to-table
-                lumbersexual salvia messenger bag. Coloring book flannel
-                truffaut craft beer drinking vinegar sartorial, disrupt fashion
-                axe normcore meh butcher. Portland 90's scenester vexillologist
-                forage post-ironic asymmetrical, chartreuse disrupt butcher
-                paleo intelligentsia pabst before they sold out four loko. 3
-                wolf moon brooklyn.
+              <p className="leading-relaxed text-lg mb-4 text-left!">
+                Frameworks & Libraries: Next.js, React.js, Express.js,
+                TailwindCSS, FastAPI, Flask, PyQt6. DevOps: Linux, VPS,
+                Git/GitHub, Docker, Cloudflare. Programming Languages: Python,
+                JavaScript, TypeScript, HTML, CSS. AI Tools: OpenAI API, Codex,
+                ChatGPT, GitHub Copilot. Currently learning CS50 from Hardvard
+                University, and having fun with HackClub community.
               </p>
-              <a className="text-pink-400 inline-flex items-center">
-                Learn More
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  className="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
+              <div className="[&_>svg]:size-12 flex flex-wrap gap-4">
+                <Nextjs />
+                <ReactSvg />
+                <Expressjs />
+                <TailwindCSS />
+                <FastAPI />
+                <Flask />
+                <Linux />
+                <Git />
+                <GitHub />
+                <Docker />
+                <Cloudflare />
+                <Python />
+                <JavaScript />
+                <TypeScript />
+                <HTML5 />
+                <CSS />
+                <OpenAI />
+                <Codex />
+                <GitHubCopilot />
+              </div>
             </div>
           </div>
         </div>
