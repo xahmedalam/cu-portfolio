@@ -20,12 +20,20 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
+  font-variation-settings: "width" 100;
 }
 
 @layer base {
   body,
   section {
     @apply bg-background text-foreground;
+  }
+
+  .btn {
+    @apply inline-flex justify-center items-center text-primary-foreground fill-primary-foreground bg-primary border-primary-foreground/10 border py-1 px-3 focus:outline-none hover:bg-pink-900 rounded text-base cursor-pointer transition-colors;
+  }
+
+  .btn-lg {
+    @apply py-2 px-6 gap-2;
   }
 }

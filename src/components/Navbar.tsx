@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
+import ArrowSvg from "../assets/ArrowSvg";
 import { cn } from "../lib/utils";
-import Button from "./ui/Button";
 
 const links = [
   { label: "Projects", slug: "#projects" },
@@ -76,7 +76,10 @@ export default function Navbar() {
           ))}
         </nav>
         <a href="https://github.com/xahmedalam" target="_blank">
-          <Button />
+          <button className="btn mt-4 md:mt-0">
+            GitHub
+            <ArrowSvg className="size-4 ml-1 -rotate-45" />
+          </button>
         </a>
       </div>
     </header>
