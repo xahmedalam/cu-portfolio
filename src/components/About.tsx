@@ -1,22 +1,22 @@
-import { Cloudflare } from "../assets/logos/cloudflare";
-import { Codex } from "../assets/logos/codex";
-import { CSS } from "../assets/logos/css";
-import { Docker } from "../assets/logos/docker";
-import { Expressjs } from "../assets/logos/expressjs";
-import { FastAPI } from "../assets/logos/fastapi";
-import { Flask } from "../assets/logos/flask";
-import { Git } from "../assets/logos/git";
-import { GitHub } from "../assets/logos/github";
-import { GitHubCopilot } from "../assets/logos/github-copilot";
-import { HTML5 } from "../assets/logos/html";
-import { JavaScript } from "../assets/logos/javascript";
-import { Linux } from "../assets/logos/linux";
-import { Nextjs } from "../assets/logos/nextjs";
-import { OpenAI } from "../assets/logos/openai";
-import { Python } from "../assets/logos/python";
-import { ReactSvg } from "../assets/logos/reactjs";
-import { TailwindCSS } from "../assets/logos/tailwindcss";
-import { TypeScript } from "../assets/logos/typescript";
+import { Cloudflare } from "../assets/logos/Cloudflare";
+import { Codex } from "../assets/logos/Codex";
+import { CSS } from "../assets/logos/Css";
+import { Docker } from "../assets/logos/Docker";
+import { Expressjs } from "../assets/logos/ExpressJS";
+import { FastAPI } from "../assets/logos/FastApi";
+import { Flask } from "../assets/logos/Flask";
+import { Git } from "../assets/logos/Git";
+import { GitHub } from "../assets/logos/Github";
+import { GitHubCopilot } from "../assets/logos/GithubCopilot";
+import { HTML5 } from "../assets/logos/Html";
+import { JavaScript } from "../assets/logos/Javascript";
+import { Linux } from "../assets/logos/Linux";
+import { Nextjs } from "../assets/logos/NextJS";
+import { OpenAI } from "../assets/logos/OpenAI";
+import { Python } from "../assets/logos/Python";
+import { ReactSvg } from "../assets/logos/ReactJS";
+import { TailwindCSS } from "../assets/logos/TailwindCSS";
+import { TypeScript } from "../assets/logos/Typescript";
 
 export default function About() {
   return (
