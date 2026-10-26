@@ -30,7 +30,7 @@ body {
   }
 
   .btn {
-    @apply inline-flex justify-center items-center text-primary-foreground fill-primary-foreground bg-primary border-primary-foreground/10 border py-1 px-3 focus:outline-none hover:bg-pink-900 rounded text-base cursor-pointer transition-colors;
+    @apply inline-flex justify-center items-center text-primary-foreground fill-primary-foreground bg-primary border-primary-foreground/10 border py-1 px-3 focus:outline-none hover:bg-pink-900 rounded text-base cursor-pointer transition-colors disabled:opacity-65 disabled:cursor-auto disabled:hover:bg-primary;
   }
 
   .btn-lg {

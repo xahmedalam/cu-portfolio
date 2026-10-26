@@ -1,8 +1,66 @@
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "convex/react";
+import { Loader } from "lucide-react";
+import { useState } from "react";
+import { useForm, type SubmitHandler } from "react-hook-form";
+import { api } from "../../convex/_generated/api";
 import SendSvg from "../assets/SendSvg";
+import { MessageSchema, type TMessageSchema } from "../lib/schema";
+import { cn } from "../lib/utils";
 
 export default function Contact() {
+  const [popup, setPopup] = useState(false);
+  const [sending, setSending] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<TMessageSchema>({ resolver: zodResolver(MessageSchema) });
+  const addMessage = useMutation(api.myFunctions.addMessage);
+
+  const onSubmit: SubmitHandler<TMessageSchema> = async (data) => {
+    setSending(true);
+    // Add message to convex db
+    await addMessage({
+      name: data.name,
+      email: data.email,
+      message: data.message,
+    });
+    // Reset form
+    reset();
+    setSending(false);
+    setPopup(true);
+  };
+
+  const hidePopup = () => {
+    setPopup(false);
+  };
+
   return (
     <section id="contact" className="body-font relative">
+      {/* PopUp */}
+      <div
+        className={cn(
+          "size-full fixed top-0 z-100 bg-card/75 backdrop-blur-lg hidden justify-center items-center",
+          popup && "flex",
+        )}
+        onClick={hidePopup}
+      >
+        <div
+          className="h-fit w-2xs flex flex-col border-2 border-border bg-card rounded-lg px-4"
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+        >
+          <h2 className="text-white text-lg text-center my-4 font-medium title-font">
+            Message sent successfully
+          </h2>
+          <button className="btn mb-4" onClick={hidePopup}>
+            OK
+          </button>
+        </div>
+      </div>
       <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
         <div className="lg:w-2/3 md:w-1/2 bg-card rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
           <iframe
@@ -53,47 +111,79 @@ export default function Contact() {
           <p className="leading-relaxed mb-5">
             Anything you want to say, I'll reply to your email.
           </p>
-          <div className="relative mb-4">
-            <label htmlFor="name" className="leading-7 text-sm text-gray-400">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            />
-          </div>
-          <div className="relative mb-4">
-            <label htmlFor="email" className="leading-7 text-sm text-gray-400">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            />
-          </div>
-          <div className="relative mb-4">
-            <label
-              htmlFor="message"
-              className="leading-7 text-sm text-gray-400"
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="relative mb-4">
+              <label htmlFor="name" className="leading-7 text-sm text-body">
+                Name
+              </label>
+              <input
+                disabled={sending}
+                {...register("name")}
+                type="text"
+                id="name"
+                name="name"
+                className="w-full bg-card rounded border border-border focus:border-primary text-base outline-none text-foreground py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+              {errors.name && (
+                <p role="alert" className="text-sm text-red-500 mt-1">
+                  {errors.name.message}
+                </p>
+              )}
+            </div>
+            <div className="relative mb-4">
+              <label htmlFor="email" className="leading-7 text-sm text-body">
+                Email
+              </label>
+              <input
+                disabled={sending}
+                {...register("email")}
+                type="email"
+                id="email"
+                name="email"
+                className="w-full bg-card rounded border border-border focus:border-primary text-base outline-none text-foreground py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+              {errors.email && (
+                <p role="alert" className="text-sm text-red-500 mt-1">
+                  {errors.email.message}
+                </p>
+              )}
+            </div>
+            <div className="relative mb-4">
+              <label htmlFor="message" className="leading-7 text-sm text-body">
+                Message
+              </label>
+              <textarea
+                disabled={sending}
+                {...register("message")}
+                id="message"
+                name="message"
+                className="w-full bg-card rounded border border-border focus:border-primary h-32 text-base outline-none text-foreground py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+              ></textarea>
+              {errors.message && (
+                <p role="alert" className="text-sm text-red-500 mt-1">
+                  {errors.message.message}
+                </p>
+              )}
+            </div>
+            <button
+              disabled={sending}
+              type="submit"
+              className="btn btn-lg w-full"
             >
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-            ></textarea>
-          </div>
-          <button className="btn btn-lg">
-            <SendSvg /> Send
-          </button>
-          <p className="text-xs text-gray-400 text-opacity-90 mt-3">
-            I'll not share or sell your data to anyone.
-          </p>
+              {sending ? (
+                <>
+                  <Loader className="animate-spin" /> Sending
+                </>
+              ) : (
+                <>
+                  <SendSvg /> Send
+                </>
+              )}
+            </button>
+            <p className="text-xs text-body text-opacity-90 mt-3">
+              I'll not share or sell your data to anyone.
+            </p>
+          </form>
         </div>
       </div>
     </section>
