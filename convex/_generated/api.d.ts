@@ -9,6 +9,7 @@
  */
 
 import type * as myFunctions from "../myFunctions.js";
+import type * as rateLimiter from "../rateLimiter.js";
 
 import type {
   ApiFromModules,
@@ -18,6 +19,7 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   myFunctions: typeof myFunctions;
+  rateLimiter: typeof rateLimiter;
 }>;
 
 /**
@@ -46,4 +48,6 @@ export declare const internal: FilterApi<
   FunctionReference<any, "internal">
 >;
 
-export declare const components: {};
+export declare const components: {
+  rateLimiter: import("@convex-dev/rate-limiter/_generated/component.js").ComponentApi<"rateLimiter">;
+};

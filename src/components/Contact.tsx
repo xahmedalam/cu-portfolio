@@ -11,26 +11,29 @@ import { cn } from "../lib/utils";
 export default function Contact() {
   const [popup, setPopup] = useState(false);
   const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState("");
+  const addMessage = useMutation(api.myFunctions.addMessage);
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm<TMessageSchema>({ resolver: zodResolver(MessageSchema) });
-  const addMessage = useMutation(api.myFunctions.addMessage);
 
   const onSubmit: SubmitHandler<TMessageSchema> = async (data) => {
     setSending(true);
-    // Add message to convex db
-    await addMessage({
-      name: data.name,
-      email: data.email,
-      message: data.message,
-    });
-    // Reset form
-    reset();
-    setSending(false);
-    setPopup(true);
+    setSendError("");
+
+    try {
+      await addMessage(data);
+      reset();
+      setPopup(true);
+    } catch {
+      setSendError("Too many messages");
+      setPopup(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   const hidePopup = () => {
@@ -54,7 +57,7 @@ export default function Contact() {
           }}
         >
           <h2 className="text-white text-lg text-center my-4 font-medium title-font">
-            Message sent successfully
+            {sendError === "" ? "Message sent successfully" : sendError}
           </h2>
           <button className="btn mb-4" onClick={hidePopup}>
             OK

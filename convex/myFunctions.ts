@@ -1,7 +1,9 @@
 import { NoOp } from "convex-helpers/server/customFunctions";
 import { zCustomMutation } from "convex-helpers/server/zod4";
+import { ConvexError } from "convex/values";
 import { z } from "zod";
 import { mutation } from "./_generated/server";
+import { rateLimiter } from "./rateLimiter";
 
 // Make this once, to use anywhere you would have used `query`
 // const zQuery = zCustomQuery(query, NoOp);
@@ -23,6 +25,19 @@ export const addMessage = zMutation({
       .max(500, "Message must be less than 500 characters long"),
   },
   handler: async (ctx, args) => {
+    const { ip } = await ctx.meta.getRequestMetadata();
+
+    if (!ip) {
+      throw new ConvexError(
+        "Could not identify your network address. Please try again later.",
+      );
+    }
+
+    await rateLimiter.limit(ctx, "messagesPerIp", {
+      key: ip,
+      throws: true,
+    });
+
     const id = await ctx.db.insert("messages", {
       name: args.name,
       email: args.email,
