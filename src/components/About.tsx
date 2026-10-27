@@ -27,7 +27,7 @@ export default function About() {
             <img
               alt="content"
               className="object-cover object-center h-full w-full"
-              src="about-cover.png"
+              src="about-cover.jpeg"
             />
           </div>
           <div className="flex flex-col sm:flex-row mt-10">
@@ -35,7 +35,7 @@ export default function About() {
               <div className="inline-flex items-center justify-center">
                 <img
                   className="w-20 h-20 rounded-full"
-                  src="ahmed-alam.jpg"
+                  src="ahmed-alam.jpeg"
                   alt="Ahmed Alam Pic"
                 />
               </div>

@@ -31,7 +31,7 @@ export default function Hero() {
                 <img
                   alt="gallery"
                   className="w-full object-cover h-full object-center block"
-                  src="p1-2.png"
+                  src="p1-2.jpeg"
                 />
               </a>
             </div>
@@ -45,7 +45,7 @@ export default function Hero() {
                 <img
                   alt="gallery"
                   className="w-full object-cover h-full object-center block"
-                  src="p1-3.png"
+                  src="p1-3.jpeg"
                 />
               </a>
             </div>
@@ -59,7 +59,7 @@ export default function Hero() {
                 <img
                   alt="gallery"
                   className="w-full h-full object-cover object-center block"
-                  src="p1-1.png"
+                  src="p1-1.jpeg"
                 />
               </a>
             </div>
@@ -75,7 +75,7 @@ export default function Hero() {
                 <img
                   alt="gallery"
                   className="w-full h-full object-cover object-center block"
-                  src="p2-1.png"
+                  src="p2-1.jpeg"
                 />
               </a>
             </div>
@@ -89,7 +89,7 @@ export default function Hero() {
                 <img
                   alt="gallery"
                   className="w-full object-cover h-full object-center block"
-                  src="p2-2.png"
+                  src="p2-2.jpeg"
                 />
               </a>
             </div>
@@ -103,7 +103,7 @@ export default function Hero() {
                 <img
                   alt="gallery"
                   className="w-full object-cover h-full object-center block"
-                  src="p2-3.png"
+                  src="p2-3.jpeg"
                 />
               </a>
             </div>

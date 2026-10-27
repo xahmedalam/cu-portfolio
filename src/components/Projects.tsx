@@ -4,7 +4,7 @@ import { cn } from "../lib/utils";
 
 const projects = [
   {
-    imgUrl: "p1-cover.png",
+    imgUrl: "p1-cover.jpeg",
     category: "Desktop App",
     title: "GenZ Player",
     description:
@@ -14,7 +14,7 @@ const projects = [
     githubLink: "https://github.com/xahmedalam/genzplayer",
   },
   {
-    imgUrl: "p2-cover.png",
+    imgUrl: "p2-cover.jpeg",
     category: "Web App",
     title: "ConUtil Compressor",
     description:
@@ -24,7 +24,7 @@ const projects = [
     githubLink: "https://github.com/xahmedalam/conutil-compressor",
   },
   {
-    imgUrl: "p3-cover.png",
+    imgUrl: "p3-cover.jpeg",
     category: "Discord Bot",
     title: "CU Discord Bot",
     description:
