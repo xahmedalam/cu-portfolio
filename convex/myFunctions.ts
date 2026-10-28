@@ -90,7 +90,7 @@ export const sendMessage = zAction({
       };
     }
 
-    fetch(env.DISCORD_WEBHOOK_URL, {
+    await fetch(env.DISCORD_WEBHOOK_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
