@@ -1,18 +1,19 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "convex/react";
+import { useAction } from "convex/react";
 import { Loader } from "lucide-react";
 import { useState } from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { api } from "../../convex/_generated/api";
 import SendSvg from "../assets/SendSvg";
 import { MessageSchema, type TMessageSchema } from "../lib/schema";
-import { cn } from "../lib/utils";
 
 export default function Contact() {
-  const [popup, setPopup] = useState(false);
   const [sending, setSending] = useState(false);
-  const [sendError, setSendError] = useState("");
-  const addMessage = useMutation(api.myFunctions.addMessage);
+  const [sendResponse, setSendResponse] = useState<{
+    status: string;
+    message: string;
+  } | null>(null);
+  const addMessage = useAction(api.myFunctions.sendMessage);
   const {
     register,
     handleSubmit,
@@ -22,48 +23,40 @@ export default function Contact() {
 
   const onSubmit: SubmitHandler<TMessageSchema> = async (data) => {
     setSending(true);
-    setSendError("");
 
-    try {
-      await addMessage(data);
+    const response = await addMessage(data);
+    setSendResponse(response);
+
+    if (response.status === "success") {
       reset();
-      setPopup(true);
-    } catch {
-      setSendError("Too many messages");
-      setPopup(true);
-    } finally {
-      setSending(false);
     }
-  };
-
-  const hidePopup = () => {
-    setPopup(false);
+    setSending(false);
   };
 
   return (
     <section id="contact" className="body-font relative">
       {/* PopUp */}
-      <div
-        className={cn(
-          "size-full fixed top-0 z-100 bg-card/75 backdrop-blur-lg hidden justify-center items-center",
-          popup && "flex",
-        )}
-        onClick={hidePopup}
-      >
+      {sendResponse && (
         <div
-          className="h-fit w-2xs flex flex-col border-2 border-border bg-card rounded-lg px-4"
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
+          className="size-full fixed top-0 z-100 bg-card/75 backdrop-blur-lg flex justify-center items-center"
+          onClick={() => setSendResponse(null)}
         >
-          <h2 className="text-white text-lg text-center my-4 font-medium title-font">
-            {sendError === "" ? "Message sent successfully" : sendError}
-          </h2>
-          <button className="btn mb-4" onClick={hidePopup}>
-            OK
-          </button>
+          <div
+            className="h-fit w-2xs flex flex-col border-2 border-border bg-card rounded-lg py-4 px-4"
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          >
+            <h2 className="text-white text-lg text-center font-medium title-font capitalize">
+              {sendResponse.status}
+            </h2>
+            <p className="text-body mb-4">{sendResponse.message}</p>
+            <button className="btn" onClick={() => setSendResponse(null)}>
+              OK
+            </button>
+          </div>
         </div>
-      </div>
+      )}
       <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
         <div className="lg:w-2/3 md:w-1/2 bg-card rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
           <iframe
